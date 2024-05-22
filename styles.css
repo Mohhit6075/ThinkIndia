@@ -10,6 +10,8 @@
 html, body {
     width: 100%;
     height: 100%;
+    background: #000;
+    
 }
 
 ::-webkit-scrollbar {
@@ -23,7 +25,7 @@ html, body {
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background:#fcb74f;
+    background:#FC5011;
   }
   
   /* Handle on hover */
@@ -40,19 +42,21 @@ html, body {
     position: fixed;
     z-index: 10000;
     box-shadow: 1.5px -32px 20px 12.5px #030303;
-    background: rgba(255, 255, 255, 0.90);
-    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.903);
+    backdrop-filter: blur(10px);
 }
-
+.logo{
+    border-radius: 50%;
+}
 .header img {
-    width: 5rem;
     width: 65px;
+    object-fit: cover;
 }
 
 .nav a {
     position: relative;
     font-size: 1.1vw;
-    color: black;
+    color: #eee;
     font-weight: 400;
     margin-right: 1.5rem;
 }   
@@ -67,12 +71,10 @@ html, body {
     background:#FC5011;
     transition: ease .4s;
 }
-
-
-
 .nav a:hover::after {
     width: 100%;
 }
+
 
 #checkbox2 {
     display: none;
@@ -127,7 +129,7 @@ html, body {
     }
 
 .home {
-    background-image: url(./images/home.png);
+    background:linear-gradient(to right, rgba(13, 13, 13, 0.832), rgba(13, 13, 13, 0.733)), url("https://images.collegedunia.com/public/reviewPhotos/539249/IMG-20221229-WA0023.jpg?mode=cover");
     background-repeat: no-repeat; 
     background-size: cover;
     background-position: center;
@@ -146,8 +148,46 @@ html, body {
 }
 
 .banner h3 {
-    font-size: 3.5vw;
-    line-height: 1.5;
+    font-size: 8vw;
+    color: #eee;
+    text-align: left;
+    margin: 0 10vw;
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .1em;
+    animation: 
+      typing 2s steps(40, end) ,
+      blink-cursor .5s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-cursor {
+    from, to { border-color: transparent }
+    50% { border-color: rgba(0, 0, 0, 0) }
+  }
+  
+
+.banner h4 {
+    font-size: 5vw;
+    color: #FC5011;
+    text-align: left;
+    margin:0 10vw;
+}
+
+.banner p {
+    font-size: 1.5vw;
+    color: #b7b3b3;
+    letter-spacing: .3rem;
+    text-align: left;
+    margin: 3vh 30vw 0 10vw;
 }
 
 .banner h5 {
@@ -158,9 +198,67 @@ html, body {
 .banner h1 {
     color: #FC5011;
     font-size: 10vw;
-    /* letter-spacing: -0.09em; */
     padding-bottom: 3rem;
 }
+
+.icons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    right: 50px;
+    bottom: 100px;
+    
+  }
+
+  .icons::before{
+    display: block;
+    content: "";
+    width: 1px;
+    height: 80px;
+    background-color: rgb(255 255 255 / 43%);
+    margin-bottom: 16px;
+    border-radius: 15px;
+  }
+  .icons::after{
+    position: relative;
+    display: block;
+    content: "";
+    width: 1px;
+    height: 80px;
+    background-color: rgb(255 255 255 / 43%);
+    margin-top: 22px;
+    border-radius: 15px;
+  }
+
+  .icons a {
+    margin: 1em;
+    cursor: pointer;
+    transition-duration: 500ms;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 0;
+    transition: all .2s linear;
+  }
+
+  .icons a:first-child:hover path:nth-child(2){
+    fill:#fc5011f3 !important;
+    transition: all .2s linear;
+  }
+  .icons a:nth-child(2):hover path:nth-child(5){
+    fill:#fc5011f3 !important;
+    transition: all .2s linear;
+  }
+  .icons a:nth-child(2):hover path:nth-child(7){
+    fill:#fc5011f3 !important;
+    transition: all .2s linear;
+  }
+  .icons a:nth-child(3):hover path:nth-child(4){
+    fill:#fc5011f3 !important;
+    transition: all .2s linear;
+  }
 
 .button {
     position: relative;
@@ -237,14 +335,19 @@ html, body {
 }
 
 .about {
-    width: 100%;
-    min-height: 100vh;
-    padding: 2rem 3%;
+    width: 90%;
+    min-height: 80vh;
+    padding: 0rem 3%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    justify-content: space-between;
     gap: 2rem;
+    color: #eee;
+    background: rgba(38, 38, 38, 0.422);
+    backdrop-filter: blur(100px);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 20vh;
 }
 
 .about-img {
@@ -253,6 +356,7 @@ html, body {
     display: grid;
     place-items: center;
     background-color: bisque;
+    
 }
 
 .about-img img {
@@ -267,37 +371,66 @@ html, body {
 /* Events Section */
 
 .events{ 
-    min-height: 100vh;
-    width: 100%;
+    min-height: 70vh;
+    width: 90%;
+    text-align: left;
+    padding-top: 3rem;
+    margin: 0 auto;
+    margin-top: 60px;
+    background: rgba(38, 38, 38, 0.422);
+    backdrop-filter: blur(100px);
+    border-radius: 10px;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    position: relative;
+
+}
+.events .heading{
     text-align: center;
-    padding: 2rem 0;
+    color: #eee;
 }
 
 .container {
-    padding: 3rem 2rem;
-    display: grid;
-    grid-template-columns: repeat(3 , 1fr);
-    width: 100%;
-    justify-content: space-around;
+    width: 150%;
+    display: flex;
+    margin: 0 auto;
+    gap: 20px;
+    animation: moveSlideshow 40s linear infinite;
 }
-
+@keyframes moveSlideshow {
+    0% { 
+      transform: translateX(80%);  
+    }
+    100% { 
+        transform: translateX(-100%);  
+      }
+    
+}
+.container:hover{
+    animation-play-state: paused;
+}
 .card {
-    width: 440px;
-    height: 600px;
-    padding: 2rem 1rem; 
+    width: 350px;
+    height: 350px;
     background: #fff;
     text-align: left;
-    margin: 0 1rem;
     position: relative;
     display:  flex;
-    z-index: 1;
     align-items: flex-end;
+    flex-wrap: wrap;
+    z-index: 1;
     box-shadow: 1px 7px 28px -12px rgba(0,0,0,0.75);
     transition: 0.5s ease-in-out;
+    border-radius: 20px;
+    margin: 0 auto;
+   
 }
 
+
+
 .card:hover {
-    transform: translateY(20px);
+    transform: translateY(10px);
+
 }
 
 .card:before {
@@ -318,9 +451,6 @@ html, body {
     background: linear-gradient(to bottom, rgba(176, 88, 0, 0.5), rgb(255, 200, 0)) !important;
 }
 
-.card2:before {
-    background: linear-gradient(to bottom, rgba(236, 236, 236, 0.5), rgb(88, 88, 88)) !important;
-}
 
 .card:hover:before {
     opacity: 1;
@@ -329,24 +459,24 @@ html, body {
 .card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
+    object-fit: fill;
+    border-radius: 10px;
 }
 
 .card .info {
     position: relative;
     z-index: 3;
+    padding: 0rem 1rem;
     color: #fff;
     opacity: 0;
     transform: translateY(30px);
     transition: 0.5s all;
+    font-size: 12px;
 }
 
 .card:hover .info {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(-280px);
 }
 
 .card .info h3 {
@@ -355,13 +485,12 @@ html, body {
 }
 
 .card .info p {
-    font-size: 15px;
+    font-size: 13px;
     margin-top: 8px;
     margin-bottom: 40px;
 }
 
 .card .info a {
-    padding: 0.8rem 3rem; 
     background:#FC5011;
     border-radius: 2rem;
     margin-left: 0;
@@ -373,14 +502,15 @@ html, body {
     padding: 4rem;
     display: flex;
     min-height: 100vh;
-    width: 100%;
-    text-align: center;
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
     margin-top: 4rem;
-    background-image: url(./images/buzzbg.png);
-    background-repeat: no-repeat; 
-    background-size: cover;
-    background-position: center;
     justify-content: space-between;
+    background: rgba(38, 38, 38, 0.422);
+    backdrop-filter: blur(100px);
+    border-radius: 10px;
+    
 }
 
 
@@ -397,13 +527,14 @@ html, body {
     text-align: left;
     color: transparent;
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: #FC5011;
 }
 
 .bharatbuzz p{
     text-align: left;
     padding: 2rem 0;
     font-size: 1.1vw;
+    color: #eee;
 }
 
 .bharatbuzz h3 {
@@ -418,7 +549,7 @@ html, body {
 
 .follow {
     position: relative;
-    width: 250px;
+    width: 350px;
     height: 50px;
     cursor: pointer;
     display: flex;
@@ -426,19 +557,21 @@ html, body {
     border:none;
     background: linear-gradient(to right, #ff7649, #ff9900);
     overflow: hidden;
-    border-radius:3rem;
+    margin-top: 30px;
+    border-radius:10px;
     }
     .follow, .follow__icon, .follow__text {
     transition: all 0.3s;
     }
     .follow .follow__text {
-    transform: translateX(22px);
+    transform: translateX(68px);
     color: #fff;
+    font-size: 16px;
     font-weight: 600;
     }
     .follow .follow__icon {
     position: absolute;
-    transform: translateX(190px);
+    transform: translateX(250px);
     height: 100%;
     width: 39px;
     background-color: transparent;
@@ -458,14 +591,15 @@ html, body {
     }
     .follow:hover .follow__icon {
     width: 45px;
-    transform: translateX(105px);
+    transform: translateX(155px);
     }
     .follow:active .follow__icon {
     background: linear-gradient(to right, #ff7649, #ff9900);
     }
-.bharatbuzz video {
-    margin: 4rem;
-    text-align: left;
+.bharatbuzz img {
+    border-radius: 15px;
+    margin-top: 80px;
+
 }
 
 @media screen and (max-width: 768px) {
@@ -489,16 +623,18 @@ html, body {
 .gallery {
     text-align: center;
     padding: 6rem 0;
+    
 }
 
 .gallery .heading {
-    padding-bottom: 4rem;   
+    padding-bottom: 4rem;  
+    color: #eee; 
 }
 
 .image-gallery {
     max-width: 1450px;
     margin: 0 auto;
-    background: #f2f2f2;
+    background: #000;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -534,10 +670,11 @@ html, body {
 
 .contact {
     max-height: 50vh;
-    background:#fcb74f;
+    background:#000000;
     padding-top: 30px;
     display: flex;
-    gap: 60px;
+    gap: 200px;
+
 }
 
 .contact-content {
@@ -551,27 +688,28 @@ html, body {
     color: #ff4000;
     border-bottom: 1px solid #615c5cd1;
     padding-bottom: 10px;
+
 }
 .call{
     margin-top: 40px;
     display: flex;
     gap: 10px;
     align-items: top;
-    color: #252525;
+    color: #eee;
 }
 .address{
     margin-top: 10px;
     display: flex;
     gap: 10px;
     align-items: center;
-    color: #252525;
+    color: #eee;
 }
 .email{
     margin-top: 10px;
     display: flex;
     gap: 10px;
     align-items: center;
-    color: #252525;
+    color: #eee;
 }
 .contact-content div i {
     font-size: 30px;
@@ -650,16 +788,44 @@ html, body {
     transition: all .3s linear;
 }
 
+.x{
+    display: flex;
+    width: 150px;
+    appearance: none;
+    border: none;
+    background: #FC5011;
+    border-radius: 5px;
+    font-size: 18px;
+    color: whitesmoke;
+    align-items: center;
+    gap: 10px;
+    transition: all .3s linear;
+    padding: 5px;
+}
+.x:hover{
+    color: #000;
+    background: #fff;
+    transition: all .3s linear;
+}
+
 .footer {
     width: 100%;
-    background: #fcb74f;
+    background: #000;
     position: relative;
-    text-align: right;
+    text-align: center;
     padding-bottom: 12px;
+    margin: 0 auto;
+    margin-top: 50px;
 }
 
 .footer-content p {
+    width: 60%;
     font-size: 0.98vw;
+    color: #eee;
+    margin: 0 auto;
+    border-top: 1px solid #615c5cd1;
+    padding-top: 30px;
+
 }
 
 .footer-iconTop a {
@@ -667,123 +833,17 @@ html, body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    bottom: 175px;
-    right: 60px;
-    background: #fcd0d0;
+    bottom: 305px;
+    right: 100px;
+    background: #1e1e20;
     border-radius: 10px;
 }
 
 .footer-iconTop a:hover {
     box-shadow: 0 0 1rem #f05a27;
+    background: #000;
 }
 
-
-
-/* Team Page */
-
-.team .title {
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-    background:#ff9900;
-    min-height:70vh;
-    padding-top : 15%;  
-}
-
-.title h3 {
-    color: white;
-    padding-bottom: 4rem;
-}
-
-.title a {
-    padding: 1rem 4rem;
-    border-radius: 3rem;
-    font-size: 1vw;
-    /* border: 2px solid #f05a27; */
-    background: transparent;
-    transition: .3s ease;
-}
-
-.banner a:hover {
-    background:#ff9900
-}
-
-.team-container {
-    padding: 4rem 3%;
-
-}
-
-.final-year .card-parent {
-    height: auto;
-    width: 100%;
-    display: grid;
-    padding: 4rem 1rem;
-    grid-template-columns: repeat(4, auto);
-    align-items: center;
-}
-
-
-.team-container h4 {
-    font-size: 1.6vw;
-    color:#f05a27;
-    padding-bottom: 2rem;
-}
-
-.card-container {
-	border: 1px solid #d4d4d4;
-	border-radius: 5px;
-	color: black;
-	padding-top: 30px;
-    padding-bottom: 30px;
-	position: relative;
-	width: 300px;
-    margin: 2rem 0;
-	max-width: 100%;
-	text-align: center;
-    transition : .5s ease;
-}
-
-.card-container img {
-    width: 9rem; 
-    height: 9rem;
-}
-
-.card-container:hover {
-	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
-    transform: scale(1.1);  
-}
-
-.card-container .round {
-	border: 1px solid #f05a27;
-	border-radius: 50%;
-	padding: 7px;
-}
-
-.buttons {
-    display: flex;
-    padding: 1rem;
-    text-align:center;
-    align-items: center;
-    justify-content: center;
-}
-
-.buttons a {
-    padding: 0.5rem 0.7rem;
-    border: 1px solid #f05a27;
-    border-radius: 50%;
-    font-size: 1.6rem;
-    color: black;
-    margin: 0 1rem;
-    align-items: center;
-    justify-content: center; 
-    transition: .5s ease all;
-}
-
-.buttons a:hover {
-    background:#f05a27;
-    color: white;
-}
 
 
 /* Responsiveness  */
